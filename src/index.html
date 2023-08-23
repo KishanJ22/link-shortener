@@ -7,10 +7,16 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <div>
-            <h1 class="font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+        <div class="text-center justify-content-center">
+            <h1 class="font-bold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 pt-5 max-lg:text-6xl">
                 Link Shortener
             </h1>
+            <form>
+                <div class="join pt-3 flex-center w-full px-60">
+                    <input type="text" name="text" class="input input-bordered join-item w-full" placeholder="URL"/>
+                    <input type="submit" name="submit" class="btn join-item rounded-r-full" value="Shorten!" />
+                  </div>
+            </form>
         </div>
     </body>
 </html>
