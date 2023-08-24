@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Link Shortener</title>
-        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.1/dist/full.css" rel="stylesheet" type="text/css" />
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body>
-        <div class="text-center justify-content-center">
-            <h1 class="font-bold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 pt-5 max-lg:text-6xl">
-                Link Shortener
-            </h1>
-            <form>
-                <div class="join pt-3 flex-center w-full px-60">
-                    <input type="text" name="text" class="input input-bordered join-item w-full" placeholder="URL"/>
-                    <input type="submit" name="submit" class="btn join-item rounded-r-full" value="Shorten!" />
-                  </div>
-            </form>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Link Shortener</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="text-center justify-content-center">
+        <h1
+            class="font-bold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 pt-5 max-lg:text-6xl">
+            Link Shortener
+        </h1>
+        <div class="join pt-3 flex-center w-full px-60">
+            <input type="text" id="long_url" class="input input-bordered join-item w-full" placeholder="URL" />
+            <button id="shorten" name="shorten" class="btn join-item rounded-r-full">Shorten!</button>
         </div>
-    </body>
+        <div id="linkModal">
+
+        </div>
+        <div id="toasts">
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+</body>
+
 </html>
