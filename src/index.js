@@ -66,7 +66,7 @@ async function short() {
             <form method="dialog" class="modal-box">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 <h3 class="font-bold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-green-500 to-blue-500">Here are your links!</h3>
-                <h3 class="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 pt-3">Short code: ${code}</h3>
+                <h3 id="linkCode" class="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 pt-3">Short code: ${code}</h3>
                 <button class="btn btn-circle btn-outline" onclick=copyCode('${code}')>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
@@ -74,7 +74,7 @@ async function short() {
                 </button>
                 <ul>
                 <li class="mt-5 flex-center space-x-5">
-                    <a href="${original_link}" target="_blank">Short code 1: ${shortLink1}</a>
+                    <a id="shortLink1" href="${original_link}" target="_blank">Short code 1: ${shortLink1}</a>
                     <button class="btn btn-circle btn-outline" onclick=copyLink('${shortLink1}')>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
@@ -117,6 +117,8 @@ async function short() {
         // Creates a toast to notify the user that the link was shortened successfully
 
         setTimeout(removeToast, 5000);
+
+        console.log(document.getElementById("linkCode").innerHTML)
     }
     catch(error) {
         if(document.getElementById("viewLinkButton")) {
