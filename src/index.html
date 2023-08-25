@@ -14,6 +14,7 @@
             class="font-bold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 pt-5 max-lg:text-6xl">
             Link Shortener
         </h1>
+        <p class="text-sm">Paste the URL you would like to shorten in the text box and click on shorten!</p>
         <div class="join pt-3 flex-center w-full px-60">
             <input type="text" id="long_url" class="input input-bordered join-item w-full" placeholder="URL" />
             <button id="shorten" name="shorten" class="btn join-item rounded-r-full">Shorten!</button>
@@ -22,40 +23,6 @@
         <div id="toasts"></div>
     </div>
     <script src="index.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyA2VwRCBFE6GENqw3343mocM_cdV4cPVHg",
-          authDomain: "link-shortener-kj.firebaseapp.com",
-          projectId: "link-shortener-kj",
-          storageBucket: "link-shortener-kj.appspot.com",
-          messagingSenderId: "411182437199",
-          appId: "1:411182437199:web:45eb649f0cab9a4af7eb3a",
-          measurementId: "G-P28P7XR9C1",
-          databaseURL: "https://europe-west1.firebaseio.com"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-
-        // Initialize realtime database
-        const db = getDatabase();
-
-        if(document.getElementById("shortLink1")) {
-            set(ref(db, 'Links/'+document.getElementById("linkCode").innerHTML), {
-                
-            })
-        }
-      </script>
 </body>
 
 </html>
